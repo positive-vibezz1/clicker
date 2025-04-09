@@ -30,7 +30,7 @@ def main():
     number_mod = number + upgrade_one
 
     UO_checknumber = 10
-    sprite_width = 64  # Width of each sprite in the sprite sheet
+    sprite_width = 64
 
     sheet_info = [(i * sprite_width, 0) for i in range(10)]
 
@@ -47,7 +47,8 @@ def main():
         main_text = Text((10, 10), str(number), "arial", 24)
 
         """ put sprites here """
-        main_sprite = Sprite((100, 100), r"Numbers\number_sprite.png", (255,0,0), (50, 50),sheet_info=sheet_info)
+        main_sprite = Sprite((200, 100), r"Numbers\number_sprite.png", (255,0,0), (200, 50),sheet_info=sheet_info)
+        # main_sprite = Sprite((200, 100), r"Numbers\number_sprite.png", (255,0,0), (200, 50),sheet_info=sheet_info)
 
         get_mouse_pos = pygame.mouse.get_pos()
 
@@ -72,6 +73,7 @@ def main():
 
         """ rendered sprites here """
 
+        
         def sprite_render():
             index = 0
             for index, (x,y) in enumerate(main_sprite.sheet_info):
@@ -80,7 +82,7 @@ def main():
                     main_sprite.render(window.screen, index)
                     break
 
-        main_sprite.render(window.screen)
+
         sprite_render()
 
 
