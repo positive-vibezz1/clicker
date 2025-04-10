@@ -2,6 +2,7 @@ import pygame
 
 class Sprite():
     def __init__(self, position, imagepath=None, colour=(255,0,0), size=(64,64), sheet_info=None, sprite_size=(64, 64)):
+
         self.position = position
         self.colour = colour
         self.size = size
