@@ -13,11 +13,15 @@ class Sprite():
         else:
             self.image = pygame.Surface(self.sprite_size)
             self.image.fill(colour)
+
+        self.rect = pygame.Rect(self.position, self.sprite_size)
     def render(self, screen, index=0):
         x,y = self.sheet_info[index]
-        sprite_rect = pygame.Rect(x, y, self.size[0], self.size[1])
+        sprite_rect = pygame.Rect(x, y, self.sprite_size[0], self.sprite_size[1])
+
         digit_surface = self.image.subsurface(sprite_rect)
         digit_surface = self.image.subsurface(pygame.Rect(x, y, self.sprite_size[0], self.sprite_size[1]))
+        scaled_surface = pygame.transform.scale(digit_surface, self.size)
 
-        screen.blit(digit_surface, self.position)
+        screen.blit(scaled_surface, self.position)
 
