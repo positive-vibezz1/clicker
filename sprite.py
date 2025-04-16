@@ -14,7 +14,7 @@ class Sprite():
             self.image = pygame.Surface(self.sprite_size)
             self.image.fill(colour)
 
-        self.rect = pygame.Rect(self.position, self.sprite_size)
+        self.rect = pygame.Rect(self.position, self.size)
     def render(self, screen, index=0):
         x,y = self.sheet_info[index]
         sprite_rect = pygame.Rect(x, y, self.sprite_size[0], self.sprite_size[1])
