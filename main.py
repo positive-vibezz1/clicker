@@ -58,7 +58,7 @@ def main():
 
         """ put sprites here """
         main_sprite = Sprite((200, 100), r"Numbers\number_sprite.png", (255,0,0), (200, 50),sheet_info=sheet_info)
-        button_sprite = Sprite((350, 250), r"data\sprites\button.png", (255,0,0), (64,64),sheet_info=sheet_info)
+        button_sprite = Sprite((350, 250), r"data\sprites\oil_rig_inverted.png", (255,0,0), size=(128,128),sheet_info=sheet_info)
         # main_sprite = Sprite((200, 100), r"Numbers\number_sprite.png", (255,0,0), (200, 50),sheet_info=sheet_info)
 
         get_mouse_pos = pygame.mouse.get_pos()
@@ -69,7 +69,7 @@ def main():
                 pygame.quit()
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if main_button.rect.collidepoint(get_mouse_pos):
+                if button_sprite.rect.collidepoint(get_mouse_pos):
                     number = number + number_mod
                     print(f"number mod {number_mod}")
                     print(f"upgrade {upgrade_one}")
