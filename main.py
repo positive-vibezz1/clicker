@@ -28,12 +28,9 @@ def main():
 
     number = 1
     upgrade_one = 0
-
+    UO_checknumber = 10
 
     number_mod = 1 + upgrade_one
-
-        # upgrade button worth
-    UO_checknumber = 10
 
     sprite_width = 64
 
@@ -65,6 +62,7 @@ def main():
 
 
         for event in pygame.event.get():
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
@@ -76,19 +74,17 @@ def main():
                     print(f"total {number}")
                     print(f"mouse pos {get_mouse_pos}")
                 if number >= UO_checknumber and upgrade_one_button_sprite.rect.collidepoint(get_mouse_pos):
+                    print(UO_checknumber)
                     upgrade_one += 1
                     number_mod = upgrade_one + 1
-                    if number > 50:
-                        UO_checknumber += 10
-                    elif number > 100:
-                        UO_checknumber += 50
+                    UO_checknumber += 10
 
 
-        """ button widgets here """
+        """ rendered rects here """
         #main_button.draw(window.screen)
         #upgrade_one_button.draw(window.screen)
 
-        """ text widgets here"""
+        """ rendered text here"""
         main_text.render(window.screen)
         upgrade_one_text.render(window.screen)
         total_click_amount.render(window.screen)
