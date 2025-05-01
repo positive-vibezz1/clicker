@@ -93,13 +93,8 @@ def main():
         upgrade_one_text.render(window.screen)
         total_click_amount.render(window.screen)
 
-
-        """ sprite widgets here """
-
         """ rendered sprites here """
-
         # sprite_render()
-
         button_sprite.render(window.screen, 0)
         upgrade_one_button_sprite.render(window.screen, 0)
 
